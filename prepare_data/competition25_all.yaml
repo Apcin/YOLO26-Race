@@ -1,0 +1,34 @@
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+train: competition25_train70.txt
+val: competition25_val10.txt
+test: competition25_test20.txt
+
+# number of classes
+nc: 25
+
+names:
+  0: HM
+  1: LQS
+  2: QHS
+  3: MS
+  4: A1_SU-35
+  5: A2_C-130
+  6: A3_C-17
+  7: A4_C-5
+  8: A5_F-16
+  9: A6_TU-160
+  10: A7_E-3
+  11: A8_B-52
+  12: A9_P-3C
+  13: A10_B-1B
+  14: A11_E-8
+  15: A12_TU-22
+  16: A13_F-15
+  17: A14_KC-135
+  18: A15_F-22
+  19: A16_FA-18
+  20: A17_TU-95
+  21: A18_KC-10
+  22: A19_SU-34
+  23: A20_SU-24
+  24: FSC
