@@ -199,8 +199,27 @@ class DetectionTrainer(BaseTrainer):
         model = self.set_model_names_for_load(
             DetectionModel(cfg, nc=self.data["nc"], ch=self.data["channels"], verbose=verbose and RANK == -1)
         )
+        source_model = getattr(weights, "model", None)
+        source_head = source_model[-1] if source_model is not None else None
+        source_has_strip = bool(getattr(source_head, "strip_reg", False))
+        source_has_hbs = bool(getattr(source_head, "hbs_enabled", False))
+        if source_has_strip:
+            model.model[-1].enable_reg_strip()
+        if source_has_hbs:
+            model.model[-1].enable_hbs()
         if weights:
             model.load(weights)
+        if self.args.strip_reg and not source_has_strip:
+            model.model[-1].enable_reg_strip()
+        if self.args.hbs and not source_has_hbs:
+            model.model[-1].enable_hbs()
+        elif not self.args.hbs and source_has_hbs:
+            model.model[-1].hbs_enabled = False
+            model.model[-1].hbs = None
+        if self.args.strip_reg:
+            LOGGER.info("Strip regression enabled: inserted 5x5 -> 1x19 -> 19x1 gating after the first bbox Conv.")
+        if self.args.hbs:
+            LOGGER.info("HBS enabled: training-only P3 background smoothing with an auxiliary one-to-many loss.")
         return model
 
     def get_validator(self):

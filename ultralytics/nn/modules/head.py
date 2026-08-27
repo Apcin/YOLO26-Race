@@ -34,6 +34,83 @@ __all__ = (
 )
 
 
+class StripRegBlock(nn.Module):
+    """Strip R-CNN spatial gating block used only by bounding-box regression towers."""
+
+    def __init__(self, channels: int, kernel_size: int = 19):
+        """Build sequential local, horizontal, vertical, and pointwise convolutions."""
+        super().__init__()
+        if kernel_size < 1 or kernel_size % 2 == 0:
+            raise ValueError(f"kernel_size must be a positive odd integer, but got {kernel_size}")
+        padding = kernel_size // 2
+        self.local = nn.Conv2d(channels, channels, 5, padding=2, groups=channels)
+        self.horizontal = nn.Conv2d(
+            channels, channels, (1, kernel_size), padding=(0, padding), groups=channels
+        )
+        self.vertical = nn.Conv2d(
+            channels, channels, (kernel_size, 1), padding=(padding, 0), groups=channels
+        )
+        self.proj = nn.Conv2d(channels, channels, 1)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        """Generate directional spatial weights and use them to gate the input feature."""
+        attention = self.proj(self.vertical(self.horizontal(self.local(x))))
+        return x * attention
+
+
+class HBSBlock(nn.Module):
+    """SET-style channel bottleneck that smooths only GT-defined background features."""
+
+    def __init__(self, channels: int, reduction: int = 4, kernel_size: int = 3):
+        """Build the P3 background denoiser used only by the auxiliary training path."""
+        super().__init__()
+        if reduction < 1 or channels < reduction:
+            raise ValueError(f"reduction must be in [1, {channels}], but got {reduction}")
+        if kernel_size < 1 or kernel_size % 2 == 0:
+            raise ValueError(f"kernel_size must be a positive odd integer, but got {kernel_size}")
+        hidden = channels // reduction
+        padding = kernel_size // 2
+        self.denoiser = nn.Sequential(
+            nn.Conv2d(channels, hidden, kernel_size, padding=padding),
+            nn.ReLU(),
+            nn.Conv2d(hidden, channels, kernel_size, padding=padding),
+        )
+
+    @staticmethod
+    def foreground_mask(feature: torch.Tensor, batch: dict[str, torch.Tensor]) -> torch.Tensor:
+        """Rasterize augmented normalized GT boxes directly onto a feature map."""
+        bs, _, height, width = feature.shape
+        mask = torch.zeros((bs, 1, height, width), device=feature.device, dtype=torch.bool)
+        boxes = batch["bboxes"].to(device=feature.device, dtype=feature.dtype)
+        batch_idx = batch["batch_idx"].to(device=feature.device, dtype=torch.long).view(-1)
+        if not boxes.numel():
+            return mask
+
+        x_left = torch.arange(width, device=feature.device, dtype=feature.dtype) / width
+        x_right = x_left + 1 / width
+        y_top = torch.arange(height, device=feature.device, dtype=feature.dtype) / height
+        y_bottom = y_top + 1 / height
+        for image_index in range(bs):
+            image_boxes = boxes[batch_idx == image_index]
+            if not image_boxes.numel():
+                continue
+            centers, sizes = image_boxes[:, :2], image_boxes[:, 2:]
+            xy1 = (centers - sizes / 2).clamp_(0, 1)
+            xy2 = (centers + sizes / 2).clamp_(0, 1)
+            inside_x = (x_right[None] > xy1[:, 0:1]) & (x_left[None] < xy2[:, 0:1])
+            inside_y = (y_bottom[None] > xy1[:, 1:2]) & (y_top[None] < xy2[:, 1:2])
+            mask[image_index, 0] = (inside_y[:, :, None] & inside_x[:, None, :]).any(0)
+        return mask
+
+    def forward(self, feature: torch.Tensor, batch: dict[str, torch.Tensor]) -> torch.Tensor:
+        """Preserve foreground exactly and apply residual smoothing to background."""
+        foreground = self.foreground_mask(feature, batch).to(feature.dtype)
+        background = 1 - foreground
+        background_feature = feature * background
+        smoothed_background = background_feature + self.denoiser(background_feature)
+        return feature * foreground + smoothed_background * background
+
+
 class Detect(nn.Module):
     """YOLO Detect head for object detection models.
 
@@ -135,6 +212,42 @@ class Detect(nn.Module):
         if end2end:
             self.one2one_cv2 = copy.deepcopy(self.cv2)
             self.one2one_cv3 = copy.deepcopy(self.cv3)
+
+        self.strip_reg = False
+        self.hbs_enabled = False
+        self.hbs = None
+        self.hbs_channels = ch[0]
+
+    def enable_reg_strip(self, kernel_size: int = 19) -> None:
+        """Insert a StripBlock after the first local convolution in every bbox regression tower."""
+        if self.strip_reg:
+            return
+        regression_heads = [self.cv2]
+        if self.end2end:
+            regression_heads.append(self.one2one_cv2)
+        for heads in regression_heads:
+            for head in heads:
+                channels = head[0].conv.out_channels
+                head.insert(1, StripRegBlock(channels, kernel_size))
+        self.strip_reg = True
+
+    def enable_hbs(self, reduction: int = 4, kernel_size: int = 3) -> None:
+        """Enable training-only P3 hierarchical background smoothing."""
+        if getattr(self, "hbs", None) is None:
+            self.hbs_channels = getattr(self, "hbs_channels", self.cv2[0][0].conv.in_channels)
+            reference = next(self.parameters())
+            self.hbs = HBSBlock(self.hbs_channels, reduction, kernel_size).to(
+                device=reference.device, dtype=reference.dtype
+            )
+        self.hbs_enabled = True
+
+    def hbs_features(self, features: list[torch.Tensor], batch: dict[str, torch.Tensor]) -> list[torch.Tensor]:
+        """Return features with HBS applied only to P3; inference never calls this method."""
+        if not getattr(self, "hbs_enabled", False) or getattr(self, "hbs", None) is None:
+            return features
+        enhanced = list(features)
+        enhanced[0] = self.hbs(enhanced[0], batch)
+        return enhanced
 
     @property
     def one2many(self):

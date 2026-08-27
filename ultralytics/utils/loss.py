@@ -1297,6 +1297,7 @@ class E2ELoss:
         """Initialize E2ELoss with one-to-many and one-to-one detection losses using the provided model."""
         self.one2many = loss_fn(model, tal_topk=10)
         self.one2one = loss_fn(model, tal_topk=7, tal_topk2=1)
+        self.head = model.model[-1]
         self.updates = 0
         self.total = 1.0
         # init gain
@@ -1312,7 +1313,12 @@ class E2ELoss:
         one2many, one2one = preds["one2many"], preds["one2one"]
         loss_one2many = self.one2many.loss(one2many, batch)
         loss_one2one = self.one2one.loss(one2one, batch)
-        return loss_one2many[0] * self.o2m + loss_one2one[0] * self.o2o, loss_one2one[1]
+        loss = loss_one2many[0] * self.o2m + loss_one2one[0] * self.o2o
+        if getattr(self.head, "hbs_enabled", False):
+            enhanced = self.head.hbs_features(one2many["feats"], batch)
+            hbs_preds = self.head.forward_head(enhanced, **self.head.one2many)
+            loss = loss + self.one2many.hyp.hbs_gain * self.o2m * self.one2many.loss(hbs_preds, batch)[0]
+        return loss, loss_one2one[1]
 
     def update(self) -> None:
         """Update the weights for one-to-many and one-to-one losses based on the decay schedule."""

@@ -25,6 +25,9 @@ exist_ok: False # (bool) overwrite existing 'project/name' if True
 pretrained: True # (bool | str) use pretrained weights (bool) or load weights from path (str)
 cls_remap: True # (bool) when fine-tuning across datasets, remap pretrained cls head rows by class-name match
 optimizer: auto # (str) optimizer: SGD, MuSGD, Adam, Adamax, AdamW, NAdam, RAdam, RMSProp, or auto
+strip_reg: False # (bool) add a Strip R-CNN-style StripBlock to bbox regression towers only
+hbs: False # (bool) add training-only P3 hierarchical background smoothing with an auxiliary detection loss
+hbs_gain: 1.0 # (float) HBS auxiliary-loss gain relative to the clean one-to-many loss
 verbose: True # (bool) print verbose logs
 seed: 0 # (int) random seed for reproducibility
 deterministic: True # (bool) enable deterministic ops; reproducible but may be slower
