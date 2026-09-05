@@ -26,7 +26,8 @@ pretrained: True # (bool | str) use pretrained weights (bool) or load weights fr
 cls_remap: True # (bool) when fine-tuning across datasets, remap pretrained cls head rows by class-name match
 optimizer: auto # (str) optimizer: SGD, MuSGD, Adam, Adamax, AdamW, NAdam, RAdam, RMSProp, or auto
 strip_reg: False # (bool) add a Strip R-CNN-style StripBlock to bbox regression towers only
-hbs: False # (bool) add training-only P3 hierarchical background smoothing with an auxiliary detection loss
+hbs: False # (bool) add training-only hierarchical background smoothing with an auxiliary detection loss
+hbs_all_levels: False # (bool) apply HBS to every detection level using SET stride-adaptive kernels (P3/P4/P5: 3/5/5)
 hbs_gain: 1.0 # (float) HBS auxiliary-loss gain relative to the clean one-to-many loss
 verbose: True # (bool) print verbose logs
 seed: 0 # (int) random seed for reproducibility

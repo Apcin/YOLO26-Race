@@ -62,7 +62,7 @@ class HBSBlock(nn.Module):
     """SET-style channel bottleneck that smooths only GT-defined background features."""
 
     def __init__(self, channels: int, reduction: int = 4, kernel_size: int = 3):
-        """Build the P3 background denoiser used only by the auxiliary training path."""
+        """Build a background denoiser used only by the auxiliary training path."""
         super().__init__()
         if reduction < 1 or channels < reduction:
             raise ValueError(f"reduction must be in [1, {channels}], but got {reduction}")
@@ -216,7 +216,9 @@ class Detect(nn.Module):
         self.strip_reg = False
         self.hbs_enabled = False
         self.hbs = None
-        self.hbs_channels = ch[0]
+        self.hbs_channels = tuple(ch)
+        self.hbs_all_levels = False
+        self.hbs_kernel_sizes = ()
 
     def enable_reg_strip(self, kernel_size: int = 19) -> None:
         """Insert a StripBlock after the first local convolution in every bbox regression tower."""
@@ -231,22 +233,55 @@ class Detect(nn.Module):
                 head.insert(1, StripRegBlock(channels, kernel_size))
         self.strip_reg = True
 
-    def enable_hbs(self, reduction: int = 4, kernel_size: int = 3) -> None:
-        """Enable training-only P3 hierarchical background smoothing."""
-        if getattr(self, "hbs", None) is None:
-            self.hbs_channels = getattr(self, "hbs_channels", self.cv2[0][0].conv.in_channels)
+    @staticmethod
+    def adaptive_hbs_kernel_size(stride: float) -> int:
+        """Return the odd SET kernel size g(S)=floor(log2(S)/2)*2+1 for an FPN stride."""
+        if stride <= 0:
+            raise ValueError(f"HBS stride must be positive, but got {stride}")
+        return int(math.log2(stride)) // 2 * 2 + 1
+
+    def enable_hbs(self, reduction: int = 4, kernel_size: int = 3, all_levels: bool = False) -> None:
+        """Enable training-only HBS on P3 or all FPN levels with SET stride-adaptive kernels."""
+        current_all_levels = bool(getattr(self, "hbs_all_levels", False))
+        if getattr(self, "hbs", None) is None or current_all_levels != all_levels:
+            channels = getattr(self, "hbs_channels", ())
+            if not isinstance(channels, (tuple, list)) or len(channels) != self.nl:
+                channels = tuple(head[0].conv.in_channels for head in self.cv2)
+            self.hbs_channels = tuple(channels)
             reference = next(self.parameters())
-            self.hbs = HBSBlock(self.hbs_channels, reduction, kernel_size).to(
-                device=reference.device, dtype=reference.dtype
-            )
+            if all_levels:
+                strides = self.stride.detach().cpu().tolist()
+                if len(strides) != self.nl or any(stride <= 0 for stride in strides):
+                    raise RuntimeError(
+                        f"Detection strides must be initialized before enabling all-level HBS, got {strides}"
+                    )
+                kernel_sizes = tuple(self.adaptive_hbs_kernel_size(stride) for stride in strides)
+                self.hbs = nn.ModuleList(
+                    HBSBlock(channel, reduction, adaptive_kernel)
+                    for channel, adaptive_kernel in zip(self.hbs_channels, kernel_sizes)
+                ).to(device=reference.device, dtype=reference.dtype)
+            else:
+                kernel_sizes = (kernel_size,)
+                self.hbs = HBSBlock(self.hbs_channels[0], reduction, kernel_size).to(
+                    device=reference.device, dtype=reference.dtype
+                )
+            self.hbs_all_levels = all_levels
+            self.hbs_kernel_sizes = kernel_sizes
         self.hbs_enabled = True
 
     def hbs_features(self, features: list[torch.Tensor], batch: dict[str, torch.Tensor]) -> list[torch.Tensor]:
-        """Return features with HBS applied only to P3; inference never calls this method."""
+        """Return HBS-enhanced features for the auxiliary branch; inference never calls this method."""
         if not getattr(self, "hbs_enabled", False) or getattr(self, "hbs", None) is None:
             return features
         enhanced = list(features)
-        enhanced[0] = self.hbs(enhanced[0], batch)
+        if isinstance(self.hbs, nn.ModuleList):
+            if len(self.hbs) != len(enhanced):
+                raise RuntimeError(
+                    f"HBS has {len(self.hbs)} levels, but the detection head received {len(enhanced)}"
+                )
+            enhanced = [hbs(feature, batch) for hbs, feature in zip(self.hbs, enhanced)]
+        else:
+            enhanced[0] = self.hbs(enhanced[0], batch)
         return enhanced
 
     @property

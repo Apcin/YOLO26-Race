@@ -309,6 +309,7 @@ CFG_BOOL_KEYS = frozenset(
         "cls_remap",
         "strip_reg",
         "hbs",
+        "hbs_all_levels",
     }
 )
 CFG_STR_KEYS = frozenset({"optimizer", "split", "copy_paste_mode", "auto_augment"})

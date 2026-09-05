@@ -203,23 +203,29 @@ class DetectionTrainer(BaseTrainer):
         source_head = source_model[-1] if source_model is not None else None
         source_has_strip = bool(getattr(source_head, "strip_reg", False))
         source_has_hbs = bool(getattr(source_head, "hbs_enabled", False))
+        source_hbs_all_levels = bool(getattr(source_head, "hbs_all_levels", False))
         if source_has_strip:
             model.model[-1].enable_reg_strip()
         if source_has_hbs:
-            model.model[-1].enable_hbs()
+            model.model[-1].enable_hbs(all_levels=source_hbs_all_levels)
         if weights:
             model.load(weights)
         if self.args.strip_reg and not source_has_strip:
             model.model[-1].enable_reg_strip()
-        if self.args.hbs and not source_has_hbs:
-            model.model[-1].enable_hbs()
+        if self.args.hbs and (not source_has_hbs or self.args.hbs_all_levels != source_hbs_all_levels):
+            model.model[-1].enable_hbs(all_levels=self.args.hbs_all_levels)
         elif not self.args.hbs and source_has_hbs:
             model.model[-1].hbs_enabled = False
             model.model[-1].hbs = None
         if self.args.strip_reg:
             LOGGER.info("Strip regression enabled: inserted 5x5 -> 1x19 -> 19x1 gating after the first bbox Conv.")
         if self.args.hbs:
-            LOGGER.info("HBS enabled: training-only P3 background smoothing with an auxiliary one-to-many loss.")
+            head = model.model[-1]
+            levels = "all detection levels" if head.hbs_all_levels else "P3 only"
+            LOGGER.info(
+                f"HBS enabled: training-only background smoothing on {levels} with kernels "
+                f"{head.hbs_kernel_sizes} and an auxiliary one-to-many loss."
+            )
         return model
 
     def get_validator(self):
