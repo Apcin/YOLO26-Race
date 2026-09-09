@@ -63,7 +63,7 @@ classifiers = [
 # Required dependencies ------------------------------------------------------------------------------------------------
 dependencies = [
     "filelock>=3.16.1",
-    "numpy>=1.23.0; platform_system != 'Darwin'",
+    "numpy!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,!=2.3.1,!=2.3.2,!=2.3.3,!=2.3.4,>=1.23.0; platform_system != 'Darwin'",
     "numpy>=1.23.0,!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,!=2.3.1,!=2.3.2,!=2.3.3,!=2.3.4; platform_system == 'Darwin'",  # Accelerate matmul bug fixed in 2.3.5
     "matplotlib>=3.3.0",
     "opencv-python>=4.7.0,!=4.13.0.90", # 4.13.0.90 FIPS selftest crash https://github.com/ultralytics/ultralytics/issues/23373
@@ -104,7 +104,7 @@ export-base = [
     "packaging>=26.0; platform_machine == 'aarch64' and platform_system == 'Linux' and python_version >= '3.9'", # IMX export bug
 ]
 export-legacy-torch = [
-    "numpy<2",
+    "numpy<3",
     "setuptools<81.0.0; python_version >= '3.9'",  # legacy torch's torch_version imports pkg_resources, removed in setuptools>=81
     "nncf<3.0.0; python_version >= '3.9'",  # nncf>=3 reads torch.uint16, added in torch 2.3
 ]
@@ -129,7 +129,7 @@ export-executorch = [
 ]
 export-deepx = [
     "dx_com",
-    "numpy<2",
+    "numpy<3",
 ]
 export-litert = [  # LiteRT export, Linux x86 and macOS (litert-torch trace + ai-edge-litert/quantizer)
     "litert-torch>=0.9.0; (platform_system == 'Linux' and platform_machine == 'x86_64') or platform_system == 'Darwin'",
