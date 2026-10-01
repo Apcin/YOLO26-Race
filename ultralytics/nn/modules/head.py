@@ -44,12 +44,8 @@ class StripRegBlock(nn.Module):
             raise ValueError(f"kernel_size must be a positive odd integer, but got {kernel_size}")
         padding = kernel_size // 2
         self.local = nn.Conv2d(channels, channels, 5, padding=2, groups=channels)
-        self.horizontal = nn.Conv2d(
-            channels, channels, (1, kernel_size), padding=(0, padding), groups=channels
-        )
-        self.vertical = nn.Conv2d(
-            channels, channels, (kernel_size, 1), padding=(padding, 0), groups=channels
-        )
+        self.horizontal = nn.Conv2d(channels, channels, (1, kernel_size), padding=(0, padding), groups=channels)
+        self.vertical = nn.Conv2d(channels, channels, (kernel_size, 1), padding=(padding, 0), groups=channels)
         self.proj = nn.Conv2d(channels, channels, 1)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
@@ -276,9 +272,7 @@ class Detect(nn.Module):
         enhanced = list(features)
         if isinstance(self.hbs, nn.ModuleList):
             if len(self.hbs) != len(enhanced):
-                raise RuntimeError(
-                    f"HBS has {len(self.hbs)} levels, but the detection head received {len(enhanced)}"
-                )
+                raise RuntimeError(f"HBS has {len(self.hbs)} levels, but the detection head received {len(enhanced)}")
             enhanced = [hbs(feature, batch) for hbs, feature in zip(self.hbs, enhanced)]
         else:
             enhanced[0] = self.hbs(enhanced[0], batch)
