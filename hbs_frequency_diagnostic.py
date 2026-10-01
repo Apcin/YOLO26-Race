@@ -26,7 +26,6 @@ from ultralytics.models.yolo.detect.val import DetectionValidator
 from ultralytics.utils import LOGGER
 from ultralytics.utils.metrics import box_iou
 
-
 DEFAULT_MODEL = "runs/detect/runs/competition25/yolo26m-strip-reg/weights/best.pt"
 DEFAULT_DATA = "prepare_data/competition25_all.yaml"
 VARIANT_LEVELS = {
@@ -66,12 +65,10 @@ def masked_low_pass(feature: torch.Tensor, foreground: torch.Tensor, kernel_size
     """Average only valid background neighbors and preserve foreground values exactly."""
     background = 1 - foreground
     padding = kernel_size // 2
-    smoothed_sum = F.avg_pool2d(
-        feature * background, kernel_size, stride=1, padding=padding, count_include_pad=True
+    smoothed_sum = F.avg_pool2d(feature * background, kernel_size, stride=1, padding=padding, count_include_pad=True)
+    valid_fraction = F.avg_pool2d(background, kernel_size, stride=1, padding=padding, count_include_pad=True).clamp_min(
+        torch.finfo(feature.dtype).eps
     )
-    valid_fraction = F.avg_pool2d(
-        background, kernel_size, stride=1, padding=padding, count_include_pad=True
-    ).clamp_min(torch.finfo(feature.dtype).eps)
     smoothed_background = smoothed_sum / valid_fraction
     return feature * foreground + smoothed_background * background
 
@@ -81,7 +78,7 @@ class FeatureLowPassHook:
 
     def __init__(
         self,
-        validator: "FrequencyDiagnosticValidator",
+        validator: FrequencyDiagnosticValidator,
         levels: tuple[int, ...],
         kernels: tuple[int, ...],
         full_feature: bool,
@@ -226,11 +223,15 @@ class FrequencyDiagnosticValidator(DetectionValidator):
             )
             for class_id in range(self.nc):
                 values = [int(self.extended_stats[key][class_id]) for key in self.extended_stats]
-                class_name = self.names.get(class_id, str(class_id)) if isinstance(self.names, dict) else self.names[class_id]
+                class_name = (
+                    self.names.get(class_id, str(class_id)) if isinstance(self.names, dict) else self.names[class_id]
+                )
                 writer.writerow([class_id, class_name, *values, sum(values)])
 
 
-def summarize_variant(variant: str, validator: FrequencyDiagnosticValidator, metrics: dict[str, float]) -> dict[str, Any]:
+def summarize_variant(
+    variant: str, validator: FrequencyDiagnosticValidator, metrics: dict[str, float]
+) -> dict[str, Any]:
     """Build a compact JSON-serializable summary for cross-variant comparison."""
     race = validator.race_stats
     extended = validator.extended_stats
@@ -251,7 +252,11 @@ def summarize_variant(variant: str, validator: FrequencyDiagnosticValidator, met
         "classes": {},
     }
     for class_id in (3, 24):
-        class_name = validator.names.get(class_id, str(class_id)) if isinstance(validator.names, dict) else validator.names[class_id]
+        class_name = (
+            validator.names.get(class_id, str(class_id))
+            if isinstance(validator.names, dict)
+            else validator.names[class_id]
+        )
         class_tp, class_fp, class_fn = (int(race[key][class_id]) for key in ("tp", "fp", "fn"))
         summary["classes"][class_name] = {
             "tp": class_tp,
@@ -280,9 +285,26 @@ def write_comparison(output_dir: Path, summaries: list[dict[str, Any]]) -> None:
         json.dump(summaries, file, indent=2)
 
     columns = [
-        "variant", "tp", "fp", "fn", "recall", "fdr", "wrong_class", "duplicate", "background_or_iou",
-        "pure_background", "low_iou_same_class", "low_iou_other_class", "map50", "map50_95",
-        "ms_fp", "ms_bg_iou", "fsc_fp", "fsc_bg_iou", "aircraft_recall", "aircraft_fdr",
+        "variant",
+        "tp",
+        "fp",
+        "fn",
+        "recall",
+        "fdr",
+        "wrong_class",
+        "duplicate",
+        "background_or_iou",
+        "pure_background",
+        "low_iou_same_class",
+        "low_iou_other_class",
+        "map50",
+        "map50_95",
+        "ms_fp",
+        "ms_bg_iou",
+        "fsc_fp",
+        "fsc_bg_iou",
+        "aircraft_recall",
+        "aircraft_fdr",
     ]
     with (output_dir / "diagnostic_summary.csv").open("w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=columns)
