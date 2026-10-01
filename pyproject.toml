@@ -92,7 +92,7 @@ dev = [
     "minijinja>=2.0.0", # render docs macros without mkdocs-macros-plugin
 ]
 export-base = [
-    "onnx>=1.12.0; platform_system != 'Darwin'", # ONNX export
+    "onnx>=1.23.0; platform_system != 'Darwin'", # ONNX export
     "onnx>=1.12.0,<1.18.0; platform_system == 'Darwin' and python_version < '3.13'",  # TF inference hanging on MacOS (tested up to onnx==1.20.0)
     "onnx>=1.20.0; platform_system == 'Darwin' and python_version >= '3.13'",
     "onnxslim>=0.1.82",
