@@ -146,12 +146,12 @@ Tm /Tc7 1 Tf [ (c) 15 (hallenging) -263 (pr) 45 (oblem.) -348 (W) 92 (e) -263
 Tm /Tc7 1 Tf [ (b) 20 (ution) -333 (analysis) -334 (in) -333 (the) -333 (fr)
 37 (equency) -333 (domain.) -560 (W) 92 (e) -333 (observe) -334 (that) ] TJ
 ET BT 9.9626 0 0 9.9626 58.5 399.964 Tm /Tc7 1 Tf [ (tiny) -254 (objects)
--254 (become) -254 (less) -253 (distinct) -254 (after) -254 (featur) 37 (e)
+-254 (become) -254 (less) -253 (distinct) -254 (after) -254 (feature) 37 (e)
 -254 (encoding) -254 (and) ] TJ ET BT 9.9626 0 0 9.9626 58.5 388.009 Tm /Tc7
 1 Tf [ (can) -220 (beneﬁt) -220 (fr) 45 (om) -220 (the) -220 (r) 37 (emo)
 10 (val) -220 (of) -220 (high-fr) 37 (equency) -220 (information.) ] TJ ET
 BT 9.9626 0 0 9.9626 58.5 376.053 Tm /Tc7 1 Tf [ (In) -245 (this) -245 (paper)
-111 (,) -246 (we) -245 (pr) 45 (opose) -245 (a) -245 (no) 10 (vel) -246 (appr)
+111 (,) -246 (we) -245 (pr) 45 (oppose) -245 (a) -245 (no) 10 (vel) -246 (appr)
 45 (oac) 15 (h) -245 (named) ] TJ ET BT 9.9626 0 0 9.9626 261.136 376.053
 Tm /Tc8 1 Tf (S) Tj ET BT 9.9626 0 0 9.9626 266.676 376.053 Tm /Tc7 1 Tf [
 (pectr) 15 (al) ] TJ ET BT 9.9626 0 0 9.9626 58.5 364.098 Tm /Tc8 1 Tf (E)
@@ -160,7 +160,7 @@ Tj ET BT 9.9626 0 0 9.9626 65.145 364.098 Tm /Tc7 1 Tf [ (nhancement) -370
 BT 9.9626 0 0 9.9626 138.378 364.098 Tm /Tc7 1 Tf [ (iny) -370 (object) -371
 (detection) -370 (\(SET\),) -371 (whi) 1 (c) 14 (h) -370 (am-) ] TJ ET BT
 9.9626 0 0 9.9626 58.5 352.143 Tm /Tc7 1 Tf [ (pliﬁes) -315 (the) -315 (fr)
-37 (equency) -315 (signatur) 37 (es) -315 (of) -315 (tiny) -315 (objects)
+37 (equency) -315 (signature) 37 (es) -315 (of) -315 (tiny) -315 (objects)
 -315 (in) -315 (a) -315 (heter) 45 (o-) ] TJ ET BT 9.9626 0 0 9.9626 58.5 340.188
 Tm /Tc7 1 Tf [ (g) 10 (eneous) -227 (ar) 37 (c) 15 (hitectur) 37 (e) 15 (.)
 -302 (SET) -227 (includes) -227 (two) -227 (modules.) -302 (The) -227 (Hier)
@@ -174,9 +174,9 @@ Tm /Tc7 1 Tf [ (smoothing) -263 (oper) 15 (ations.) -350 (The) -263 (Adver)
 Tm /Tc7 1 Tf [ (tion) -398 (\(API\)) -397 (module) -398 (le) 15 (ver) 15 (a)
 10 (g) 10 (es) -398 (adver) 10 (sarial) -398 (perturbations) -398 (to) ] TJ
 ET BT 9.9626 0 0 9.9626 58.5 280.412 Tm /Tc7 1 Tf [ (incr) 37 (ease) -267
-(featur) 37 (e) -266 (saliency) -267 (in) -267 (critical) -267 (r) 37 (e)
+(feature) 37 (e) -266 (saliency) -267 (in) -267 (critical) -267 (r) 37 (e)
 40 (gions) -266 (and) -267 (pr) 45 (ompt) -267 (the) ] TJ ET BT 9.9626 0 0 9.9626 58.5 268.457
-Tm /Tc7 1 Tf [ (r) 37 (eﬁnement) -269 (of) -269 (object) -269 (featur) 37
+Tm /Tc7 1 Tf [ (r) 37 (eﬁnement) -269 (of) -269 (object) -269 (feature) 37
 (es) -268 (during) -269 (tr) 15 (aining) 15 (.) -367 (Extensive) -269 (e)
 20 (x-) ] TJ ET BT 9.9626 0 0 9.9626 58.5 256.502 Tm /Tc7 1 Tf [ (periments)
 -266 (on) -265 (four) -266 (datasets) -266 (demonstr) 15 (ate) -265 (the)
@@ -4882,7 +4882,7 @@ ET BT 9.9626 0 0 9.9626 58.5 284.855 Tm /Tc6 1 Tf [ (lik) 10 (ely) -395 (to)
 0 0 0 sc BT 9.9626 0 0 9.9626 168.1085 248.99 Tm /Tc6 1 Tf [ (\)) -264 (and)
 -264 (ha) 20 (v) 15 (e) -265 (a) -264 (higher) -265 (dependenc) 15 (y) ] TJ
 ET BT 9.9626 0 0 9.9626 58.5 237.035 Tm /Tc6 1 Tf [ (on) -268 (high-frequenc)
-15 (y) -267 (information.) -364 (Based) -267 (on) -268 (the) -268 (observ)
+15 (y) -267 (information.) -364 (Based) -267 (on) -268 (the) -268 (observe)
 25 (ations,) ] TJ ET BT 9.9626 0 0 9.9626 58.5 225.08 Tm /Tc6 1 Tf [ (we)
 -219 (in) 40 (v) 15 (estig) 5 (ate) -220 (an) -219 (e) 15 (xplicit) -219 (measure)
 -220 (to) -219 (enhance) -219 (the) -220 (frequenc) 15 (y) ] TJ ET BT 9.9626 0 0 9.9626 58.5 213.124
@@ -4901,7 +4901,7 @@ Tm /Tc6 1 Tf [ (results) -347 (sho) 25 (w) -347 (that) -346 (the) -347 (approach
 9.9626 0 0 9.9626 58.5 153.348 Tm /Tc6 1 Tf [ (icant) -326 (g) 5 (ains) -326
 (for) -326 (v) 15 (ery) -325 (tin) 15 (y) -326 (and) -326 (tin) 15 (y) -326
 (objects) -326 (without) -326 (compro-) ] TJ ET BT 9.9626 0 0 9.9626 58.5 141.393
-Tm /Tc6 1 Tf [ (mising) -250 (lar) 18 (ger) -250 (objects.) ] TJ ET BT 9.9626 0 0 9.9626 70.455 128.821
+Tm /Tc6 1 Tf [ (missing) -250 (lar) 18 (ger) -250 (objects.) ] TJ ET BT 9.9626 0 0 9.9626 70.455 128.821
 Tm /Tc6 1 Tf [ (In) -465 (light) -466 (of) -465 (the) -466 (analysis) -465
 (abo) 15 (v) 15 (e,) -519 (we) -466 (propose) -465 (a) -466 (generic) ] TJ
 ET BT 9.9626 0 0 9.9626 58.5 116.865 Tm /Tc1 1 Tf (S) Tj ET BT 9.9626 0 0 9.9626 64.039 116.865
@@ -4914,7 +4914,7 @@ Tf (E) Tj ET BT 9.9626 0 0 9.9626 101.741 116.865 Tm /Tc6 1 Tf [ (nhancement)
 (y) -400 (objects) -401 (using) -400 (a) -401 (heterogeneous) ] TJ ET BT 9.9626 0 0 9.9626 58.5 92.955
 Tm /Tc6 1 Tf [ (architecture) -308 (for) -308 (fore) 15 (ground) -308 (and)
 -308 (background) -309 (feature) -308 (reﬁne-) ] TJ ET BT 9.9626 0 0 9.9626 58.5 81
-Tm /Tc6 1 Tf [ (ment.) -419 (The) -287 (method) -286 (includes) -287 (tw)
+Tm /Tc6 1 Tf [ (meant.) -419 (The) -287 (method) -286 (includes) -287 (tw)
 10 (o) -286 (modules.) -420 (As) -286 (illustrated) -287 (in) ] TJ ET BT 9.9626 0 0 9.9626 317.25 710.037
 Tm /Tc6 1 Tf (Fig.) Tj ET /Cs1 cs 0.21 0.49 0.74 sc BT 9.9626 0 0 9.9626 334.6945 710.037
 Tm /Tc6 1 Tf (3) Tj ET /Cs1 cs 0 0 0 sc BT 9.9626 0 0 9.9626 339.6758 710.037
@@ -4961,7 +4961,7 @@ Tm /Tc6 1 Tf [ (sho) 25 (ws) -305 (that) -306 (tin) 15 (y) -305 (objects)
 (fected) -306 (by) ] TJ ET BT 9.9626 0 0 9.9626 325.718 494.712 Tm /Tc6 1
 Tf [ (high-frequenc) 15 (y) -325 (noise.) -535 (W) 80 (e) -325 (introduce)
 -326 (a) -325 (spectral) -325 (enhance-) ] TJ ET BT 9.9626 0 0 9.9626 325.718 482.757
-Tm /Tc6 1 Tf [ (ment) -332 (scheme) -333 (for) -332 (tin) 15 (y) -333 (object)
+Tm /Tc6 1 Tf [ (meant) -332 (scheme) -333 (for) -332 (tin) 15 (y) -333 (object)
 -332 (detection) -333 (\(SET\)) -332 (by) -333 (design-) ] TJ ET BT 9.9626 0 0 9.9626 325.718 470.802
 Tm /Tc6 1 Tf [ (ing) -198 (a) -198 (heterogeneous) -198 (architecture) -198
 (for) -198 (fore) 15 (ground) -199 (and) -198 (back-) ] TJ ET BT 9.9626 0 0 9.9626 325.718 458.847
@@ -4983,7 +4983,7 @@ Tm /Tc6 1 Tf [ (tions) -362 (to) -363 (increase) -362 (feature) -362 (salienc)
 ] TJ ET BT 9.9626 0 0 9.9626 317.25 375.161 Tm /Tc6 1 Tf <a5> Tj ET BT 9.9626 0 0 9.9626 325.7182 375.161
 Tm /Tc6 1 Tf [ (Extensi) 25 (v) 15 (e) -438 (results) -437 (re) 25 (v) 15
 (eal) -438 (that) -438 (our) -438 (SET) -437 (boosts) -438 (the) -438 (well-)
-] TJ ET BT 9.9626 0 0 9.9626 325.718 363.206 Tm /Tc6 1 Tf [ (kno) 25 (wn)
+] TJ ET BT 9.9626 0 0 9.9626 325.718 363.206 Tm /Tc6 1 Tf [ (know) 25 (wn)
 -250 (baselines) -250 (and) -250 (the) -250 (prior) -250 (art) -250 (by) -250
 (a) -250 (lar) 18 (ge) -250 (mar) 18 (gin.) ] TJ ET BT 11.9552 0 0 11.9552 317.25 339.098
 Tm /Tc1 1 Tf [ (2.) -250 (Related) -250 (W) 75 (ork) ] TJ ET BT 9.9626 0 0 9.9626 317.25 320.103
@@ -5763,7 +5763,7 @@ Tm /Tc23 1 Tf (!) Tj ET BT 6.9738 0 0 6.9738 406.351 231.497 Tm /Tc24 1 Tf
 -254 (indicati) 25 (v) 15 (e) -254 (function) ] TJ ET BT 9.9626 0 0 9.9626 514.803 227.882
 Tm /Tc26 1 Tf (1) Tj ET BT 9.9626 0 0 9.9626 523.064 227.882 Tm /Tc6 1 Tf
 (denotes) Tj ET BT 9.9626 0 0 9.9626 317.25 215.927 Tm /Tc6 1 Tf [ (the) -236
-(v) 25 (alue) -235 (of) -236 (location) ] TJ ET BT 9.9626 0 0 9.9626 400.542 215.927
+(v) 25 (value) -235 (of) -236 (location) ] TJ ET BT 9.9626 0 0 9.9626 400.542 215.927
 Tm /Tc25 1 Tf (\() Tj ET BT 0.0005 Tc 9.9626 0 0 9.9626 404.416 215.927 Tm
 /Tc17 1 Tf [ (i,) -167 (j) ] TJ 0 Tc ET BT 9.9626 0 0 9.9626 416.949 215.927
 Tm /Tc25 1 Tf (\)) Tj ET BT 9.9626 0 0 9.9626 420.824 215.927 Tm /Tc6 1 Tf
@@ -8797,7 +8797,7 @@ Tm /Tc17 1 Tf (K) Tj ET BT 6.9738 0 0 6.9738 368.458 567.589 Tm /Tc24 1 Tf
 (i) Tj ET BT 9.9626 0 0 9.9626 374.243 569.083 Tm /Tc19 1 Tf ($) Tj ET BT
 9.9626 0 0 9.9626 384.46 569.083 Tm /Tc25 1 Tf (1\)) Tj ET BT 9.9626 0 0 9.9626 393.316 569.083
 Tm /Tc17 1 Tf (/) Tj ET BT 9.9626 0 0 9.9626 398.297 569.083 Tm /Tc25 1 Tf
-(2) Tj ET BT 9.9626 0 0 9.9626 406.112 569.083 Tm /Tc6 1 Tf [ (to) -284 (preserv)
+(2) Tj ET BT 9.9626 0 0 9.9626 406.112 569.083 Tm /Tc6 1 Tf [ (to) -284 (preserve)
 15 (e) -285 (the) -284 (spatial) -285 (dimensions) -284 (of) ] TJ ET BT 9.9626 0 0 9.9626 317.25 557.128
 Tm /Tc6 1 Tf [ (the) -219 (feature) -220 (map.) -300 (In) -219 (addition,)
 -226 (we) -219 (also) -220 (test) 1 (ed) -220 (other) ] TJ ET BT 9.9626 0 0 9.9626 512.092 557.128
@@ -8810,7 +8810,7 @@ Tm /Tc25 1 Tf (\)) Tj ET BT 9.9626 0 0 9.9626 534.376 557.128 Tm /Tc6 1 Tf
 -321 (T) 80 (ab) 40 (.) ] TJ ET /Cs1 cs 0.21 0.49 0.74 sc BT 9.9626 0 0 9.9626 452.5023 545.173
 Tm /Tc6 1 Tf (5) Tj ET /Cs1 cs 0 0 0 sc BT 9.9626 0 0 9.9626 457.4836 545.173
 Tm /Tc6 1 Tf [ (.) -525 (The) -321 (HBS) -322 (architecture) ] TJ ET BT 9.9626 0 0 9.9626 317.25 533.217
-Tm /Tc6 1 Tf [ (allo) 25 (ws) -227 (for) -227 (the) -228 (suppression) -227
+Tm /Tc6 1 Tf [ (allow) 25 (ws) -227 (for) -227 (the) -228 (suppression) -227
 (of) -227 (high-frequenc) 15 (y) -227 (information) -228 (in) ] TJ ET BT 9.9626 0 0 9.9626 317.25 521.262
 Tm /Tc6 1 Tf [ (the) -238 (background) -237 (while) -238 (preserving) -237
 (fore) 15 (ground) -238 (details,) -240 (signif-) ] TJ ET BT 9.9626 0 0 9.9626 317.25 509.307
@@ -9219,10 +9219,10 @@ Tm /Tc27 1 Tf (#) Tj ET BT 6.9738 0 0 6.9738 90.669 211.753 Tm /Tc23 1 Tf
 Tj 0 Tc ET BT 9.9626 0 0 9.9626 107.209 208.137 Tm /Tc6 1 Tf [ (represents)
 -380 (the) -380 (adv) 15 (ersarial) -380 (perturbation) -380 (for) -381 (the)
 ] TJ ET BT 9.9626 0 0 9.9626 58.5 196.182 Tm /Tc17 1 Tf (m) Tj ET BT 9.9626 0 0 9.9626 67.247 196.182
-Tm /Tc6 1 Tf [ (-th) -311 (branch.) -494 (The) -311 (design) -312 (allo) 25
+Tm /Tc6 1 Tf [ (-th) -311 (branch.) -494 (The) -311 (design) -312 (allow) 25
 (ws) -311 (for) -311 (a) -311 (balanced) -312 (incorpora-) ] TJ ET BT 9.9626 0 0 9.9626 58.5 184.227
 Tm /Tc6 1 Tf [ (tion) -228 (of) -228 (detection) -227 (semantics) -228 (across)
--228 (multiple) -228 (branc) 1 (h) -1 (e) 1 (s,) -233 (ensur) 20 (-) ] TJ
+-228 (multiple) -228 (branch) 1 (h) -1 (e) 1 (s,) -233 (ensur) 20 (-) ] TJ
 ET BT 9.9626 0 0 9.9626 58.5 172.272 Tm /Tc6 1 Tf [ (ing) -288 (that) -288
 (the) -288 (perturbations) -288 (are) -288 (distrib) 20 (uted) -288 (for)
 -288 (more) -288 (ef) 25 (fecti) 25 (v) 15 (e) ] TJ ET BT 9.9626 0 0 9.9626 58.5 160.317
@@ -12388,7 +12388,7 @@ Tm /Tc6 1 Tf (1) Tj ET /Cs1 cs 0 0 0 sc BT 8.9664 0 0 8.9664 62.983 500.547
 Tm /Tc6 1 Tf ([2]) Tj ET BT 8.9664 0 0 8.9664 78.42314 500.547 Tm /Tc6 1 Tf
 [ (Zhao) 25 (wei) -193 (Cai) -193 (and) -193 (Nuno) -193 (V) 111 (asconcelos.)
 -236 (Cascade) -193 (r) 20 (-cnn:) -281 (Delving) ] TJ ET BT 8.9664 0 0 8.9664 78.419 489.588
-Tm /Tc6 1 Tf [ (into) -366 (high) -366 (quality) -367 (obj) 1 (ect) -367 (detection.)
+Tm /Tc6 1 Tf [ (into) -366 (high) -366 (quality) -367 (obj) 1 (etc) -367 (detection.)
 -731 (In) ] TJ ET BT 8.9664 0 0 8.9664 220.694 489.588 Tm /Tc7 1 Tf (CVPR)
 Tj ET BT 8.9664 0 0 8.9664 243.11 489.588 Tm /Tc6 1 Tf [ (,) -366 (pages)
 -366 (6154–) ] TJ ET BT 8.9664 0 0 8.9664 78.419 478.629 Tm /Tc6 1 Tf [ (6162,)
@@ -12415,7 +12415,7 @@ Tm /Tc6 1 Tf ([4]) Tj ET BT 8.9664 0 0 8.9664 78.42314 431.668 Tm /Tc6 1 Tf
 [ (Nicolas) -204 (Carion,) -214 (Francisco) -204 (Massa,) -214 (Gabriel) -205
 (Synnae) 25 (v) 15 (e,) -214 (N) 1 (icolas) ] TJ ET BT 8.9664 0 0 8.9664 78.419 420.709
 Tm /Tc6 1 Tf [ (Usunier) 40 (,) -378 (Ale) 15 (xander) -353 (Kirillo) 15 (v)
-65 (,) -379 (and) -352 (Ser) 18 (ge) 15 (y) -353 (Zagoruyk) 10 (o.) -689 (End-)
+65 (,) -379 (and) -352 (Set) 18 (ge) 15 (y) -353 (Zagoruyk) 10 (o.) -689 (End-)
 ] TJ ET BT 8.9664 0 0 8.9664 78.419 409.75 Tm /Tc6 1 Tf [ (to-end) -316 (object)
 -315 (detection) -316 (with) -316 (transformer) 1 (s.) -571 (In) ] TJ ET BT
 8.9664 0 0 8.9664 246.344 409.75 Tm /Tc7 1 Tf (ECCV) Tj ET BT 8.9664 0 0 8.9664 269.262 409.75
@@ -12461,7 +12461,7 @@ Tm /Tc6 1 Tf (1) Tj ET /Cs1 cs 0 0 0 sc BT 8.9664 0 0 8.9664 62.983 239.114
 Tm /Tc6 1 Tf ([8]) Tj ET BT 8.9664 0 0 8.9664 78.42314 239.114 Tm /Tc6 1 Tf
 [ (Jian) -314 (Ding,) -330 (Nan) -315 (Xue,) -330 (Gui-Song) -315 (Xia,) -330
 (Xiang) -315 (Bai,) -330 (W) 80 (en) -314 (Y) 100 (ang,) ] TJ ET BT 8.9664 0 0 8.9664 78.419 228.155
-Tm /Tc6 1 Tf [ (Michael) -554 (Y) 55 (ing) -554 (Y) 100 (ang,) -631 (Ser)
+Tm /Tc6 1 Tf [ (Michael) -554 (Y) 55 (ing) -554 (Y) 100 (ang,) -631 (Set)
 18 (ge) -554 (Belongie,) -630 (Jiebo) -555 (Luo,) -630 (Mihai) ] TJ ET BT
 8.9664 0 0 8.9664 78.419 217.196 Tm /Tc6 1 Tf [ (Datcu,) -470 (Marcello) -426
 (Pelillo,) -470 (et) -425 (al.) -923 (Object) -426 (detection) -426 (in) -426
@@ -12579,7 +12579,7 @@ cs 0 0 0 sc BT 8.9664 0 0 8.9664 317.25 462.231 Tm /Tc6 1 Tf ([19]) Tj ET
 BT 8.9664 0 0 8.9664 337.1733 462.231 Tm /Tc6 1 Tf [ (Kang) -314 (Kim) -315
 (and) -315 (Hee) -314 (Seok) -315 (Lee.) -567 (Probabilistic) -315 (anchor)
 -314 (assign-) ] TJ ET BT 8.9664 0 0 8.9664 337.169 451.272 Tm /Tc6 1 Tf [
-(ment) -421 (with) -420 (iou) -421 (prediction) -421 (for) -420 (object) -421
+(meant) -421 (with) -420 (iou) -421 (prediction) -421 (for) -420 (object) -421
 (detection.) -906 (In) ] TJ ET BT 8.9664 0 0 8.9664 528.34 451.272 Tm /Tc7
 1 Tf (ECCV) Tj ET BT 8.9664 0 0 8.9664 551.258 451.272 Tm /Tc6 1 Tf (,) Tj
 ET BT 8.9664 0 0 8.9664 337.169 440.313 Tm /Tc6 1 Tf [ (pages) -250 (355–371,)
@@ -12594,7 +12594,7 @@ Tm /Tc7 1 Tf (ICLR) Tj ET BT 8.9664 0 0 8.9664 474.748 417.437 Tm /Tc6 1 Tf
 [ (,) -250 (2016.) ] TJ ET /Cs1 cs 0.21 0.49 0.74 sc BT 8.9664 0 0 8.9664 502.6335 417.437
 Tm /Tc6 1 Tf (3) Tj ET /Cs1 cs 0 0 0 sc BT 8.9664 0 0 8.9664 317.25 405.519
 Tm /Tc6 1 Tf ([21]) Tj ET BT 8.9664 0 0 8.9664 337.1733 405.519 Tm /Tc6 1
-Tf [ (Tsung-Y) 55 (i) -272 (Lin,) -279 (Michael) -272 (Maire,) -279 (Ser)
+Tf [ (Tsung-Y) 55 (i) -272 (Lin,) -279 (Michael) -272 (Maire,) -279 (Set)
 18 (ge) -272 (Belongie,) -279 (James) -272 (Hays,) ] TJ ET BT 8.9664 0 0 8.9664 337.169 394.56
 Tm /Tc6 1 Tf [ (Pietro) -233 (Perona,) -237 (De) 25 (v) 25 (a) -233 (Ramanan,)
 -237 (Piotr) -233 (Doll) ] TJ ET BT 8.9664 0 0 8.9664 484.705 394.605 Tm /Tc6
@@ -12613,7 +12613,7 @@ Tj ET /Cs1 cs 0 0 0 sc BT 8.9664 0 0 8.9664 459.9458 372.642 Tm /Tc6 1 Tf
 Tm /Tc6 1 Tf (,) Tj ET /Cs1 cs 0.21 0.49 0.74 sc BT 8.9664 0 0 8.9664 473.3954 372.642
 Tm /Tc6 1 Tf (3) Tj ET /Cs1 cs 0 0 0 sc BT 8.9664 0 0 8.9664 317.25 360.725
 Tm /Tc6 1 Tf ([22]) Tj ET BT 8.9664 0 0 8.9664 337.1733 360.725 Tm /Tc6 1
-Tf [ (Tsung-Y) 55 (i) -272 (Lin,) -279 (Michael) -272 (Maire,) -279 (Ser)
+Tf [ (Tsung-Y) 55 (i) -272 (Lin,) -279 (Michael) -272 (Maire,) -279 (Set)
 18 (ge) -272 (Belongie,) -279 (James) -272 (Hays,) ] TJ ET BT 8.9664 0 0 8.9664 337.169 349.766
 Tm /Tc6 1 Tf [ (Pietro) -233 (Perona,) -237 (De) 25 (v) 25 (a) -233 (Ramanan,)
 -237 (Piotr) -233 (Doll) ] TJ ET BT 8.9664 0 0 8.9664 484.705 349.811 Tm /Tc6
@@ -12632,7 +12632,7 @@ Tf [ (Tsung-Y) 55 (i) -468 (Lin,) -524 (Piotr) -468 (Doll) ] TJ ET BT 8.9664 0 0
 Tm /Tc6 1 Tf <ab> Tj ET BT 8.9664 0 0 8.9664 432.219 315.931 Tm /Tc6 1 Tf [
 (ar) 40 (,) -523 (Ross) -469 (Girshick,) -524 (Ka) 1 (iming) -469 (He,) ]
 TJ ET BT 8.9664 0 0 8.9664 337.169 304.972 Tm /Tc6 1 Tf [ (Bharath) -394 (Hariharan,)
--430 (and) -394 (Ser) 18 (ge) -394 (Belongie.) -821 (Feature) -394 (p) 10
+-430 (and) -394 (Set) 18 (ge) -394 (Belongie.) -821 (Feature) -394 (p) 10
 (yramid) ] TJ ET BT 8.9664 0 0 8.9664 337.169 294.013 Tm /Tc6 1 Tf [ (netw)
 10 (orks) -302 (for) -301 (object) -302 (detection.) -525 (In) ] TJ ET BT
 8.9664 0 0 8.9664 460.427 294.013 Tm /Tc7 1 Tf (CVPR) Tj ET BT 8.9664 0 0 8.9664 482.843 294.013
@@ -12691,7 +12691,7 @@ ET BT 8.9664 0 0 8.9664 337.169 159.63 Tm /Tc6 1 Tf [ (21–37,) -250 (2016.)
 (Stephen) -355 (Lin,) -382 (and) -355 (Baining) -355 (Guo.) -696 (Swin) -355
 (transformer:) ] TJ ET BT 8.9664 0 0 8.9664 337.169 125.795 Tm /Tc6 1 Tf [
 (Hierarchical) -361 (vision) -360 (transformer) -361 (using) -360 (shifted)
--361 (windo) 25 (ws.) -714 (In) ] TJ ET BT 8.9664 0 0 8.9664 337.169 114.836
+-361 (window) 25 (ws.) -714 (In) ] TJ ET BT 8.9664 0 0 8.9664 337.169 114.836
 Tm /Tc7 1 Tf (ICCV) Tj ET BT 8.9664 0 0 8.9664 357.594 114.836 Tm /Tc6 1 Tf
 [ (,) -250 (pages) -250 (10012–10022,) -250 (2021.) ] TJ ET /Cs1 cs 0.21 0.49
 0.74 sc BT 8.9664 0 0 8.9664 461.936 114.836 Tm /Tc6 1 Tf (3) Tj ET /Cs1 cs
@@ -12947,7 +12947,7 @@ sc BT 8.9664 0 0 8.9664 465.4146 643.262 Tm /Tc6 1 Tf (,) Tj ET /Cs1 cs 0.21
 /Cs1 cs 0 0 0 sc BT 8.9664 0 0 8.9664 317.25 631.28 Tm /Tc6 1 Tf ([47]) Tj
 ET BT 8.9664 0 0 8.9664 337.1733 631.28 Tm /Tc6 1 Tf [ (Gui-Song) -323 (Xia,)
 -341 (Xiang) -323 (Bai,) -341 (Jian) -324 (Di) 1 (ng,) -342 (Zhen) -323 (Zhu,)
--341 (Ser) 18 (ge) -323 (Be-) ] TJ ET BT 8.9664 0 0 8.9664 337.169 620.321
+-341 (Set) 18 (ge) -323 (Be-) ] TJ ET BT 8.9664 0 0 8.9664 337.169 620.321
 Tm /Tc6 1 Tf [ (longie,) -227 (Jiebo) -222 (Luo,) -227 (Mihai) -222 (Datcu,)
 -227 (Marcello) -222 (Pelillo,) -227 (and) -222 (Liang-) ] TJ ET BT 8.9664 0 0 8.9664 337.169 609.362
 Tm /Tc6 1 Tf [ (pei) -305 (Zhang.) -538 (Dota:) -420 (A) -306 (lar) 18 (ge-scale)
@@ -13043,7 +13043,7 @@ Tm /Tc6 1 Tf [ (Baochang) -220 (Zhang,) -225 (Da) 20 (vid) -220 (Doermann,)
 -226 (and) -219 (Xiao) -220 (Sun.) -294 (Learning) ] TJ ET BT 8.9664 0 0 8.9664 337.169 317.273
 Tm /Tc6 1 Tf [ (1-bit) -312 (tin) 15 (y) -313 (object) -312 (detector) -312
 (with) -312 (discriminati) 25 (v) 15 (e) -313 (feature) -312 (reﬁne-) ] TJ
-ET BT 8.9664 0 0 8.9664 337.169 306.314 Tm /Tc6 1 Tf [ (ment.) -360 (In) ]
+ET BT 8.9664 0 0 8.9664 337.169 306.314 Tm /Tc6 1 Tf [ (meant.) -360 (In) ]
 TJ ET BT 8.9664 0 0 8.9664 370.282 306.314 Tm /Tc7 1 Tf (ICML) Tj ET BT 8.9664 0 0 8.9664 391.702 306.314
 Tm /Tc6 1 Tf [ (,) -250 (2024.) ] TJ ET /Cs1 cs 0.21 0.49 0.74 sc BT 8.9664 0 0 8.9664 419.5875 306.314
 Tm /Tc6 1 Tf (1) Tj ET /Cs1 cs 0 0 0 sc BT 8.9664 0 0 8.9664 424.0707 306.314
@@ -13584,7 +13584,7 @@ c"ìôÿ1-Éå˜ßEh≤|Û ™EÔ“ôsáet~z}+PÈÒ&õ‚],ÉÓcGÁH¢ëÅY#üÔS6†„É¯d™ÒèôÚÕÈÈä@±‡gÈ
 ÜIû“†dÄÉﬁöèµîØ›Ëvä$…}ÑmÙ≈1úFˇ )˘îÁ⁄†e∆xHìj»œ—Y˙ÅÌ˙’gtT Ç
 ûéøZ|f·°.ë·;∫ j∏›,€9,N(ÊM¨pTÛˇ ÷≠{œ.íG∏8!À6˙t™Q?ñﬁWfd6Ìƒs€r”Cˆãâ.epò?(AÄºq≈.€NˆÚìÎÊˇ ı™3#(ÚêK“ò”1bx<ı¿†õù5˝¥2€`¥p@Ú‰),ﬁÄzt¨)⁄≈.Ü3Â˝ﬂ-≥üÁ˝jı‡∏ππÅ]¢ä8ﬂpéI6úg”®¥Zi2ÃRII;y É⁄õw8).Tπû¢[Hd∑_; Ñ@:„#'ÛòMÃ“»\ Ú!bÎ…aéO ?≠A`≥µ‹kê¸Ë#?JÈçΩµ∞µ&—d±¬1'®8Ì–SQπu$©ÀTs)8µïï≈¿‹L«R•'ù+F%§ªCºk•æ“$‘o$πê†g€Â∞¿Pq¸C÷Lﬁï.bO
 sºè∫£®<v='8’•%{öZC¡%¢J(§PQ’S#±ÁËi˜é>À#H€¸≥¥azü_j@Í∂≠ëº°‹/ˇ ◊®„{…`îŸ¿^5l/Q◊≠6G\”rF{≤y
-Òú»„s{1Îü÷ñi#0}î√íNIåìﬂ?Jë¨ncg>h!É#<ıÔ”“≥Ô≠ﬁ∆ÚHôŸôåpyZÕù1I≤XÑ”yéocﬁ±î++ôq–}+kFAìƒCuÃ≤Ûπ{gn¸ø:Á-p◊+¢2óV„<Ù'∞≠aXâ,Ô3∑ŒÅ[#⁄àª1’WV5çŒÀxBæ|§©ëü$‡w±<lÚŒÚKjë¸™#üÀ"õn`ü<ÉÃåÓ%F‚«<qS≠∫ÏGçN∆ê1œ;NOo^æ¸ä◊trE®KSîXÿ±VbG^JïÜ‚œn *}áZËÔ<7Ì$´x"<6OBO\◊9,oÚ%6Ákm?0ıÁ≤qhÌå‘ıD',ä¿)'8ËÂ]6ï:∂ï"3<êïQ¿ŒIˇ 8™⁄Cº∂ËË˘/˚¬íß<oÒ´W7ñ÷À(èr§«;îto≠#¶¶5ßÕÓXΩä`*Ug]ƒHÅKsœ∂*º8∏èrÌiÚßkd€>‹Ù™ñ˜ÔâbF ÓaèÛ⁄®‹NÚ2\ÿHÖatMúÆO5nF
+Òú»„s{1Îü÷ñi#0}î√íNIåìﬂ?Jë¨ncg>h!É#<ıÔ”“≥Ô≠ﬁ∆ÚHôŸôåpyZÕù1I≤XÑ”yéocﬁ±î++ôq–}+kFAìƒCuÃ≤Ûπ{gn¸ø:Á-p◊+¢2óV„<Ù'∞≠aXâ,Ô3∑ŒÅ[#⁄àª1’WV5çŒÀxBæ|§©ëü$‡w±<lÚŒÚKjë¸™#üÀ"õn`ü<ÉÃåÓ%F‚«<qS≠∫ÏGçN∆ê1œ;no^æ¸ä◊trE®KSîXÿ±VbG^JïÜ‚œn *}áZËÔ<7Ì$´x"<6OBO\◊9,oÚ%6Ákm?0ıÁ≤qhÌå‘ıD',ä¿)'8ËÂ]6ï:∂ï"3<êïQ¿ŒIˇ 8™⁄Cº∂ËË˘/˚¬íß<oÒ´W7ñ÷À(èr§«;îto≠#¶¶5ßÕÓXΩä`*Ug]ƒHÅKsœ∂*º8∏èrÌiÚßkd€>‹Ù™ñ˜ÔâbF ÓaèÛ⁄®‹NÚ2\ÿHÖatMúÆO5nF
 ììqe‘nu:ƒ«:0√#¢˙äfùyq\E2∆8€≥¿∆~ßö≠ßm˛ç1,YA „sÔöO-Óg∏{Ãõ’YòÁ‰ÎÎèNﬁïù˙õr;rΩ6wf9K4˚¿8¿ÈÈ‘äñÁE˚Qs•%s∫8Ò∆iñtñ{ªõaëN7º„◊®≠Ô⁄ÍÎº∏Ó=x´ZËÃ''	^'= L±‹Øîcm¨òÍ9Á&≠[K7ëåŒ=≥VuhÍ]€NÌÅW›ír}±˝+>¬¬+è7| =Ú5ù¨Ïou8Û2Kõ®Ñ`FVsúu«§1§ÊHº∂ÚÉª∫˛#ÈT <sÂâïˇ ⁄‡ìÙ¶»ƒ±V%vÙ
 (4P≤–íˇ  ,–®V‹f06„ø©™∞ÃT‚
 	œñOCÌK!We#!Tu©!ârñΩ:—gs¢1∫≥,Ω¸Å
@@ -13935,7 +13935,7 @@ stream
 VHÜ◊”¶
 ñÒ“⁄M±©q!#Ë=)6™}·Ñëq”†4üaíÈ˜Ã»AWbΩN{z’ˆíëÀ"ÉÜ1+	Y]#7Õ†géı£5–
 ±@VX˛Óı„◊¨f⁄≥3q◊CYˆÃúÁ¨k©óàÃsÇéj{I∂å=rsQﬁ_[Ô⁄ -ú’I›\QV–â± >a
-˝+6ÈˆL~m√€ÀÅq'¿˜™‹˜Á‹÷ïÕR9á#å’±™‹…Öß`Äc≠S RœJî⁄*»vÛºì◊ﬂΩ?vFiò¬©nÙÒ”éi	ùß}pàì¶UÅ¿f<èqXGœ∏rŒÃÁﬂ•tRYK.‰,2õÄ#Ób©gh*W Âòg>’rv$“C,Lí"Ü˛ ?Wˇ G/ ‹ÓN	nôı≈>ﬁY–Õú˝—ÔÈ˘SÓo-ƒ.≤»1”ÂÁöÆÇÍT-a\˝‡{zTww~\)FFN‡@ÈÍ*5Ωé,áx=±ä}ΩÈ∫ùﬁh‘·~N8\u©πV.#0&‰ì∂·‘Tr_I$b(r†HÔS∫Gv?x`‰¿«Û©#X≠a5›ºuÌöZãBµÑ§€Ÿ7O„V7ôîñT«w®Â∏¬ç“ù∏Á# }+:ÍÕsæ2‹`ËN;—{r˚™¥.ím;Å#°˛ïö≤2±p	≠Ω/J˛‘¥ieôóÖ„Zf°°µ°Q	iI'8^ä;Òı¢œqM4üƒ’	ı'4≤ÇΩT”‡cÎJÂúÙ£=Å§'4ROLt§ º“ˆÎKµÖ ; úgµ(;zP∏•¿§#∂ÜA¸Ÿ‰qÕ#[Ctö‰Aípsì”•Qµ∫K©6ê¬P∏oÓä∏PJÖI⁄ﬂﬁ«?Á–ö!£2Hb[fàÃ77*Pïä∂ìÕ(B1èó•hÀI|∞Ÿ „qœ÷ìÌQ…*p{¨ôIã¨P( ólr1ú{”ñP2a
+˝+6ÈˆL~m√€ÀÅq'¿˜™‹˜Á‹÷ïÕR9á#å’±™‹…Öß`Äc≠S RœJî⁄*»vÛºì◊ﬂΩ?vFiò¬©nÙÒ”éi	ùß}pàì¶UÅ¿f<èqXGœ∏rŒÃÁﬂ•tRYK.‰,2õÄ#Ób©gh*W Âòg>’rv$“C,Lí"Ü˛ ?Wˇ G/ ‹ÓN	nôı≈>ﬁY–Õú˝—ÔÈ˘SÓo-ƒ.≤»1”ÂÁöÆÇÍT-a\˝‡{zTww~\)FFN‡@ÈÍ*5Ωé,áx=±ä}ΩÈ∫ùﬁh‘·~N8\u©πV.#0&‰ì∂·‘Tr_I$b(r†HÔS∫Gv?x`‰¿«Û©#X≠a5›ºuÌöZãBµÑ§€Ÿ7O„V7ôîñT«w®Â∏¬ç“ù∏Á# }+:ÍÕsæ2‹`ËN;—{r˚™¥.ím;Å#°˛ïö≤2±p	≠Ω/J˛‘¥ieôóÖ„Zf°°µ°Q	iI'8^ä;Òı¢œqM4üƒ’	ı'4≤ÇΩT”‡cÎJÂúÙ£=Å§'4Rold§ º“ˆÎKµÖ ; úgµ(;zP∏•¿§#∂ÜA¸Ÿ‰qÕ#[Ctö‰Aípsì”•Qµ∫K©6ê¬P∏oÓä∏PJÖI⁄ﬂﬁ«?Á–ö!£2Hb[fàÃ77*Pïä∂ìÕ(B1èó•hÀI|∞Ÿ „qœ÷ìÌQ…*p{¨ôIã¨P( ólr1ú{”ñP2a
 Ú	™_aJEº©=	¿™“LÚ}Ê„–
 .ÉRÛ\¬äFA9œìUÂ‘$eŸÿΩÒ‘’Mß=ËÔJ„∞éYéXñ>Ùé‘·A#R≥cÆ[h„H‰BºÅA>∏¡ÆõO”5;ò¸ˇ Ωé`° nTwÛ¬[∆fb7¿'ö“_ﬂ[Èü`éLF	√.C˚÷ëórÏj¯ÍDmB%b˛Ôˇ ÷ÆOΩMuq-‘ã$“3∂–2MCÌQ'vRVAèZ1ÔOXY∫
 ú[\Ì¸h≥ï’ÛåTãÿ˚’ïáA&ûmßufù£ìÖ‡
@@ -19266,7 +19266,7 @@ endobj
 1476 0 obj
 << /Filter /FlateDecode /Length1 1040 /Length 806 >>
 stream
-x≠R]HSa~øsvŒqÈÊéÏúYÈÿŸN€‘µt€ŸÕ˛-1+≥_
+x≠R]has~øsvŒqÈÊéÏúYÈÿŸN€‘µt€ŸÕ˛-1+≥_
 ≤•[Z∫ı3√@∞¢£¿—º($/
 ™ª.äê.∫ä.ºâ(É,("€VÔôÎ¢˚ﬁ√9Ô˜<Ô{æÔ·˘ﬁÙÈ°8¡y†zc'!d ìÌÿ¿πDœ Pm}ÒXÔ*ÜÊ`Öz ≥‹7ò.‡òÕ©ûøı´àKc√Ö˝·b[26_ÌßﬂaÆ]]ˇ«/¡ΩÅ.ø'&ÿc ˙yﬁùg¥:ªî}x‹]˘≈Ey˙Ò“LÉ∂xuç|¯¯‹.~-_F®*_¿ˇ∏Ÿ\¿r[ ;/~’òÇaZ`ÅÉ!ÜÉ˝˙ôò¬RË, K®çBNß˘è—	ÛñòâåÃÄnåŸn†7Ë0Q*Ri%‡tÿçÁPT‚˜Y)¡å¿HWã‡P/Ò⁄KÖX±Z∂8◊ó6™∂Zy≠˛Hdº9⁄£Vî èÕ)pe$ìeÈX¶û|≈’äkÌ&ÿ±≠À,˚¨≠ﬁJ¥ ©6D7JóªÇMŒÕÂ>Ëf%t?VÓ£*ChûÅŸATf§ﬁl•,Ç§®î¬ BÇèXˆ/Ì•\ä§'k∏,≈z° õÎ{Lzñœ•œ‰&xFüÁn®’Ü5ßóƒI7πH∫πXîöZ3∑õUπº§ÆŒ(Gwë—i¢Ñ3Ω‹ê{v/7Y(ô\mÌt¨uãC0‘e¸Ùt7Ö>>@ùÎ¡	∞¡lEõ
 *ΩÂ¯DÙè8Ï.≈ÔS—bÙñ£L¶çëÏR–e4∏ÉTk6sˆ››ò∫Ø˜l8=uÆlè»≈MMFys}∏c≥\⁄ÙËÈÂÁq›©Hˇı1˝øø–üËe∞#‡$#Ã¢ﬂY¥Éº⁄=“~üÖÛ"b9:^ëãpÏﬁCÕ©˙u;Ô&Oﬂ⁄·Óû~}·^¢&¥ªj‰Y’2b›Z~&)
