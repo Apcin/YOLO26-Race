@@ -89,7 +89,7 @@ dev = [
     "pytest-xdist>=3.0.0",
     "coverage[toml]",
     "zensical>=0.0.53; python_version >= '3.10'",
-    "minijinja>=2.0.0", # render docs macros without mkdocs-macros-plugin
+    "minijinja>=2.24.0", # render docs macros without mkdocs-macros-plugin
 ]
 export-base = [
     "onnx>=1.12.0; platform_system != 'Darwin'", # ONNX export
